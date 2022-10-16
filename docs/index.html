@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Links to Bootstrap, fonts, and my css-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +14,17 @@
 </head>
 
 <body>
+  <!--Header, display current day here-->
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
+
+  <!--This only appears when text is saved-->
   <section class="text-center notification" id="notify">Appointment Added to <code>localStorage</code> ✔️</section>
+
+  <!--Main container, holds hour divs-->
   <div class="container">
     <div id="hour-9" class="row time-block">
       <div class="col-md-1 hour">
@@ -88,7 +94,7 @@
 
 
 
-    
+    <!--Link to jQuery, Moment.js, and my js-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./starter.js"></script>
