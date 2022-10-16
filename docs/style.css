@@ -6,7 +6,7 @@ body {
   
   textarea{
     background: transparent;
-    border: none;
+    border: 2px solid black;
     resize: none;
     color: #000000;
     border-left: 1px solid black;
@@ -19,6 +19,7 @@ body {
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
+    margin-bottom: 5px;
   }
   
   .description{
