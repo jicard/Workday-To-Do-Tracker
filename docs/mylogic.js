@@ -3,10 +3,9 @@ function todaysDate() {
     var tDate = moment().local().format("ddd, MMM Do, YYYY - h:mm:ss a");
     $("#currentDay").text(tDate);
     setTimeout(todaysDate, 1000);
-    //tDate.split("");
-    //console.log(tDate);
 }
 
+//Finds current time in double digit hour format (09, 10, 11) and compares it to the text of the div
 function changeColor() {
     var currentTime = parseInt(moment().local().format("H"));
     var rowTime = document.getElementsByClassName("number");
@@ -25,15 +24,21 @@ function changeColor() {
 }
 }
 
+//Uses jquery to send the textarea input to localstorage on save button click event, and show "appointment added" notification for 3s
 function sendToLocal() {
 $(document).ready(function () {
     $(".saveBtn").on("click", function () {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
         localStorage.setItem(time, text);
+        $('.notification').addClass('show');
+        setTimeout(function () {
+            $('.notification').removeClass('show');
+        }, 3000);
     })})
 }
 
+//Loads textarea value from localStorage if it has any
 function getFromLocal() {
     $("#hour-9 .description").val(localStorage.getItem("hour-9"));
     $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -46,6 +51,7 @@ function getFromLocal() {
     $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 }
 
+//There's probably a better way to do this, but this code is needed to change the code in the HTML file to what is displayed on the webpage (14->2pm)
 var currentTime = parseInt(moment().local().format("H"));
 var rowTime = document.getElementsByClassName("number");
 var rowTimeArray = Object.values(rowTime);
@@ -70,7 +76,7 @@ function changeToTwelve() {
 //Add onload events here
 window.onload = function onload() {
     todaysDate();
-    $("#notify").hide();
+    //$("#notify").hide();
     changeColor();
     getFromLocal();
     sendToLocal();
