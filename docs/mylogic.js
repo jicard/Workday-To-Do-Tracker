@@ -42,17 +42,14 @@ function changeColor() {
     console.log(typeof rowTimeArrayText);
     console.log(typeof currentTime);
     if (rowTimeArrayText === currentTime) {
-        rowDiv[i].style.backgroundColor = "green"
+        rowDiv[i].classList.add("present");
     } else if (rowTimeArrayText < currentTime) {
-        rowDiv[i].style.backgroundColor = "red";
+        rowDiv[i].classList.add("past");
     } else if (rowTimeArrayText > currentTime) {
-        rowDiv[i].style.backgroundColor = "blue";
+        rowDiv[i].classList.add("future");
     }
 }
 }
-
-function
-
 
 //Add onload events here
 window.onload = function onload() {
@@ -60,3 +57,34 @@ window.onload = function onload() {
     $("#notify").hide();
     changeColor();
 }
+
+/*
+var saveButtons = document
+$(document).ready(function () {
+    // listen for save button clicks
+    $('.saveBtn').on('click', function () {
+        // get nearby values
+
+        // save in localStorage
+
+        // Show notification that item was saved to localStorage by adding class 'show'
+
+        // Timeout to remove 'show' class after 2 seconds
+        setTimeout(function () {
+            $('.notification').removeClass('show');
+        }, 2000);
+    });
+*/
+/*
+document.getElementsByClassName("btn").addEventListener("click", function saveToLocal() {
+    var toDoNotes = document.getElementsByClassName("description").value;
+    localStorage.setItem("notes", toDoNotes);
+    $("#notify").show();
+    console.log("To-Do List Saved")
+}
+)
+*/
+
+
+
+
